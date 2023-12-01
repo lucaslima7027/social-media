@@ -8,7 +8,7 @@ from .models import User
 
 
 def index(request):
-    return render(request, "network/index.html")
+    return render(request, "network/layout.html")
 
 
 def login_view(request):
@@ -61,3 +61,6 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "network/register.html")
+
+def load_html(request, file):
+    return render(request, f'network/{file}.html')
