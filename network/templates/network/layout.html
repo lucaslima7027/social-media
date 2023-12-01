@@ -42,7 +42,9 @@
           </nav>
         
         <div class="body">
-        
+            {% for post in all_posts %}
+                <li>{{ post.creator }}</li>
+            {% endfor %}
         </div>
         <script src="{% static 'network/script.js' %}"></script>
     </body>

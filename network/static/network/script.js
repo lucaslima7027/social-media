@@ -29,3 +29,6 @@ document.querySelectorAll('.nav-link').forEach(element => {
         
     }
 })
+
+//Load index
+loadHtml("index")

@@ -3,12 +3,17 @@ from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+from .models import Post
 
 from .models import User
 
 
 def index(request):
-    return render(request, "network/layout.html")
+    all_posts = Post.objects.all()
+    print(all_posts[0].content)
+    return render(request, "network/layout.html", {
+        "all_posts": all_posts,
+    })
 
 
 def login_view(request):
